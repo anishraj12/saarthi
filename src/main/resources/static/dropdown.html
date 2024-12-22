@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+      <h2>Patient </h2>
+      <!--     Begin Form -->
+      <form action="/doctor/recommandation" method="get">
+        <select name="symtoms1" id="" class="form-control">
+          <option value="fatigue">fatigue</option>
+          <option value="fever">fever</option>
+          <option value="abdominal_bloating">abdominal_bloating</option>
+    		<option value="abdominal_pain">abdominal_pain</option>
+    		<option value="acidity">acidity</option>
+    		<option value="belching">belching</option>
+    		<option value="blood_in_mucus">blood_in_mucus</option>
+    		<option value="blood_in_stool">blood_in_stool</option>
+    		<option value="blurred_and_distorted_vision">blurred_and_distorted_vision</option>
+    		<option value="burning_ache">burning_ache</option>
+    		<option value="cramping">cramping</option>
+    		<option value="dehydration">dehydration</option>
+    		<option value="depression">depression</option>
+    		<option value="excessive_hunger">excessive_hunger</option>
+    		<option value="fullness_feeling">fullness_feeling</option>
+    		<option value="gnawing">gnawing</option>
+    		<option value="headache">headache</option>
+    		<option value="heartburn">heartburn</option>
+    		<option value="hiccups">hiccups</option>
+    		<option value="indigestion">indigestion</option>
+    		<option value="irritability">irritability</option>
+    		<option value="loss_of_appetite">loss_of_appetite</option>
+    		<option value="movement_stiffness">movement_stiffness</option>
+    		<option value="muscle_weakness">muscle_weakness</option>
+    		<option value="nausea">nausea</option>
+    		<option value="painful_walking">painful_walking</option>
+    		<option value="stiff_neck">stiff_neck</option>
+    		<option value="swelling_joints">swelling_joints</option>
+    		<option value="upper_abdomain_pain">upper_abdomain_pain</option>
+    		<option value="vomiting">vomiting</option>
+      </select>
+      
+       
+      
+
+      <select name="symtoms2" id="" class="form-control">
+          <option value="fatigue">fatigue</option>
+          <option value="fever">fever</option>
+          <option value="abdominal_bloating">abdominal_bloating</option>
+    		<option value="abdominal_pain">abdominal_pain</option>
+    		<option value="acidity">acidity</option>
+    		<option value="belching">belching</option>
+    		<option value="blood_in_mucus">blood_in_mucus</option>
+    		<option value="blood_in_stool">blood_in_stool</option>
+    		<option value="blurred_and_distorted_vision">blurred_and_distorted_vision</option>
+    		<option value="burning_ache">burning_ache</option>
+    		<option value="cramping">cramping</option>
+    		<option value="dehydration">dehydration</option>
+    		<option value="depression">depression</option>
+    		<option value="excessive_hunger">excessive_hunger</option>
+    		<option value="fullness_feeling">fullness_feeling</option>
+    		<option value="gnawing">gnawing</option>
+    		<option value="headache">headache</option>
+    		<option value="heartburn">heartburn</option>
+    		<option value="hiccups">hiccups</option>
+    		<option value="indigestion">indigestion</option>
+    		<option value="irritability">irritability</option>
+    		<option value="loss_of_appetite">loss_of_appetite</option>
+    		<option value="movement_stiffness">movement_stiffness</option>
+    		<option value="muscle_weakness">muscle_weakness</option>
+    		<option value="nausea">nausea</option>
+    		<option value="painful_walking">painful_walking</option>
+    		<option value="stiff_neck">stiff_neck</option>
+    		<option value="swelling_joints">swelling_joints</option>
+    		<option value="upper_abdomain_pain">upper_abdomain_pain</option>
+    		<option value="vomiting">vomiting</option>
+      </select>
+      
+            <select name="symtoms3" id="" class="form-control">
+          <option value="fatigue">fatigue</option>
+          <option value="fever">fever</option>
+          <option value="abdominal_bloating">abdominal_bloating</option>
+    		<option value="abdominal_pain">abdominal_pain</option>
+    		<option value="acidity">acidity</option>
+    		<option value="belching">belching</option>
+    		<option value="blood_in_mucus">blood_in_mucus</option>
+    		<option value="blood_in_stool">blood_in_stool</option>
+    		<option value="blurred_and_distorted_vision">blurred_and_distorted_vision</option>
+    		<option value="burning_ache">burning_ache</option>
+    		<option value="cramping">cramping</option>
+    		<option value="dehydration">dehydration</option>
+    		<option value="depression">depression</option>
+    		<option value="excessive_hunger">excessive_hunger</option>
+    		<option value="fullness_feeling">fullness_feeling</option>
+    		<option value="gnawing">gnawing</option>
+    		<option value="headache">headache</option>
+    		<option value="heartburn">heartburn</option>
+    		<option value="hiccups">hiccups</option>
+    		<option value="indigestion">indigestion</option>
+    		<option value="irritability">irritability</option>
+    		<option value="loss_of_appetite">loss_of_appetite</option>
+    		<option value="movement_stiffness">movement_stiffness</option>
+    		<option value="muscle_weakness">muscle_weakness</option>
+    		<option value="nausea">nausea</option>
+    		<option value="painful_walking">painful_walking</option>
+    		<option value="stiff_neck">stiff_neck</option>
+    		<option value="swelling_joints">swelling_joints</option>
+    		<option value="upper_abdomain_pain">upper_abdomain_pain</option>
+    		<option value="vomiting">vomiting</option>
+      </select>
+			 <button type="submit">Submit</button>
+      
+     </form>
+     
+    </div>
+    </div>
+    
+    
+  </div>
+   <table th:object="${list}" id="userTable" border="1">
+    <tr th:each="diease :${list}">
+        <td  th:text="${diease}"></td>
+        
+    </tr>
+</table>
+
+	   
+</div>
+
+</body>
+</html>

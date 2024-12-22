@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Example</title>
+</head>
+<body>
+
+<form action="/doctor/disease" method="get">
+    <label for="disease">Select a Disease Name:</label>
+    <select id="disease" th:field="*{diseaseList}" onchange="loadAdditionalDropdownOptions()"   >
+        <option th:each="disease : ${diseaseList}"  th:value="${disease}"  th:text="${disease}"></option>
+    </select>
+	  
+    <button type="submit">Submit</button>
+</form>
+<script th:inline="javascript">
+  
+    function loadAdditionalDropdownOptions() 
+    {
+    var d = document.getElementById("disease").value;
+ 	 	 <!-- // alert(d);-->
+   		run(d);
+function run(d) {
+ 
+    // Creating Our XMLHttpRequest object 
+    let xhr = new XMLHttpRequest();
+ 
+    // Making our connection  
+    let url = 'http://localhost:8080/doctor/disease?disease=' + d;
+    xhr.open("GET", url, true);
+ 	
+    // function execute after request is successful 
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+		 var additionalOptionsDiv = document.getElementById("additionalOptions");
+		 alert(additionalOptionsDiv);
+            console.log(this.responseText);
+        }
+    }
+    // Sending our request 
+    xhr.send();
+}
+        console.log(' clicked'+d);
+    }
+
+    run();
+   
+</script>
+
+
+    
+
+
+</body>
+</html>

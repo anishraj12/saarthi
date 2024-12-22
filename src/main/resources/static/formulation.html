@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulation</title>
+    <link rel="stylesheet" href="assets/css/formulation.css">
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <!-- Data Table CSS -->
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+    <!-- Font Awesome CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <!-- jQuery -->
+    <script src='https://code.jquery.com/jquery-3.7.0.js'></script>
+    <!-- Data Table JS -->
+    <script src='https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js'></script>
+
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+
+            <header id="header" class="header fixed-top">
+                <div class="container-fluid-custom">
+
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <!--  <span>FlexStart</span>-->
+                        <img src="assets/img/logo.png" style="width: 12rem;"  alt="LOGO">
+                        <!-- <h1>Logo</h1> -->
+                    </a>
+
+                    <nav id="navbar" class="navbar">
+                        <ul>
+                            <li><a class="nav-link scrollto active" href="#hero">HOME</a></li>
+                            <li><a class="nav-link scrollto" href="#about">ADVISOR</a></li>
+                            <li><a class="nav-link scrollto" href="#services">LOCATION</a></li>
+                            <li><a class="nav-link scrollto" href="#contact">CONTACT US</a></li>
+                            <!--<i><a class="nav-link scrollto" href="#team">Team</a></i>-->
+                            <!--  <li><a href="blog.html">Blog</a></li>-->
+                            <li class="dropdown"><a href="#"><span>LANGUAGE</span> <i
+                                        class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="#">Drop Down 1</a></li>
+                                    <li><a href="#">Drop Down 2</a></li>
+                                    <li><a href="#">Drop Down 3</a></li>
+                                    <li><a href="#">Drop Down 4</a></li>
+                                </ul>
+                            </li>
+
+
+                            <!--<li><a class="nav-link scrollto" href="#contact">Contact</a></li>-->
+                            <li><a class="getstarted scrollto " href="/logout">LOGOUT</a></li>
+
+
+                        </ul>
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                    </nav><!-- .na -->
+
+                </div>
+
+            </header>
+        </div>
+
+        <!-- search formu -->
+        <!-- <div class="search">
+        <input type="text" name="medi" placeholder="Search word for synonyms" required>
+    </div> -->
+
+        <!-- table -->
+        <div class="tablemate">
+
+            <div class="container wrapper">
+                <table class="table table-bordered table-hover" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th class="col-md-2">Scientific Name</th>
+                            <th class="col-md-2">Common Name</th>
+                            <th class="col-md-2">Synonyms1</th>
+                            <th class="col-md-2">Synonyms2</th>
+                            <th class="col-md-2">Synonyms3</th>
+                            <th class="col-md-2">Synonyms4</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Scientific Name</th>
+                            <th>Common Name</th>
+                            <th>Synonyms1</th>
+                            <th>Synonyms2</th>
+                            <th>Synonyms3</th>
+                            <th>Synonyms4</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr th:each="list : ${medicineList}">
+                   
+                        	<td th:text="${list.scientific_name}"></td>
+                            <td class="highlight" th:text="${list.common_name}"></td>
+                            <td th:text="${list.synonyms1}"></td>
+                            <td th:text="${list.synonyms2}"></td>
+                            <td th:text="${list.synonyms3}"></td>
+                            <td th:text="${list.synonyms4}"></td>
+                        </tr>
+                      
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <Script src="assets/js/formulation.js"></Script>
+
+</body>
+
+</html>

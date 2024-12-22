@@ -1,0 +1,213 @@
+<!--	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="stylesheet" href="../assets/css/treatmentmodel.css">
+	     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	    <title>Ayurvedic Medicine Recommender</title>
+	</head>
+	<div>
+	    <div class="container">
+	        <h1>Saarthi_Treatment</h1>
+	        <form  action="/doctor/treatmentForm" method="get" th:object="${treatmentmodel}">
+	            <div class="input-field">
+	                <label for="disease">Select Disease:</label>
+	               
+	        <select id="disease" name="disease"  th:field="*{disease}">
+    <option th:each="element : ${treatmentList}" th:value="${element}" th:text="${element}"></option>
+</select>
+	               
+	        
+	            </div>
+	
+	            <div class="input-field">
+	                <label for="age">Enter Age:</label>
+	                <input type="text" id="age" name="ageRange" required>
+	            </div>
+	
+	            <div class="input-field">
+	                <label for="prakruti">Select Manas Prakruti:</label>
+	                <select id="prakruti" name="prakruti">
+	                    <option value="vata">Vata</option>
+	                    <option value="pitta">Pitta</option>
+	                    <option value="kapha">Kapha</option>
+	                     Add more options 
+	                </select>
+	            </div>
+	
+	            <div class="input-field">
+	                <label for="gender">Select Gender:</label>
+	                <div class="radio-group">
+	                    <input type="radio" id="male" name="gender" value="male" required>
+	                    <label for="male">Male</label>
+	                    
+	                    <input type="radio" id="female" name="gender" value="female" required>
+	                    <label for="female">Female</label>
+	                </div>
+	            </div>
+	
+	         <button type="submit">Get Recommendation</button>
+	        </form>
+	
+	        <div  class="hidden">
+	            <h2>Recommended Medicine:</h2>
+	            
+	            
+	        </div>
+	    </div>
+	    
+	    
+	    
+	    
+	<div class="card" style="width: 18rem;" th:each="treatment : ${medicineDetails}" >
+		
+	  	<ul class="list-group list-group-flush">
+	   
+	   	    <li class="list-group-item" th:text="'Formulation:  ' + ${treatment.formulation}"> ></li>
+	    	<li class="list-group-item" th:text="'Medicine Description:  ' + ${treatment.medicineDescription}"></li>
+	  	    <li class="list-group-item" th:text="'Article Referrence: '+${treatment.articleReference}"></li>
+	    	<li class="list-group-item" th:text="'Article Link : '+${treatment.articleLink}"></li>
+	    
+	  </ul>
+  </div>
+  
+</div>	    
+	    
+	    
+	    
+	    
+	<div class="container d-flex align-items-center justify-content-center">
+    <div th:each="treatment : ${medicineDetails}" class="card">
+        <div class="card-body">
+            <h5 class="card-title">Formulation: <span ></span></h5>
+            <p class="card-text">Medicine Description: <span th:text="${treatment.medicineDescription}"></span></p>
+            <p class="card-text">Article Reference: <span th:text="${treatment.articleReference}"></span></p>
+            <p class="card-text">Article Link: <span th:text="${treatment.articleLink}"></span></p>
+        </div>
+    </div>
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	</body>
+
+		<script th:inline="javascript">
+  
+    function loadAdditionalDropdownOptions() 
+    {
+    var d = document.getElementById("disease").value;
+ 	 	  // alert(d);
+
+    // Creating Our XMLHttpRequest object 
+    let xhr = new XMLHttpRequest();
+ 
+    // Making our connection  
+    let url = 'http://localhost:8080/doctor/treatmentm?disease=' + d;
+    xhr.open("GET", url, true);
+ 	
+    // function execute after request is successful 
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+		 
+		 
+            console.log(this.responseText);
+        }
+    }
+    // Sending our request 
+    xhr.send();
+}
+        console.log(' clicked'+d);
+
+ 
+   
+</script>
+
+
+
+	</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/tt.css">
+    <title>Ayurvedic Medicine Recommender</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Saarthi_Treatment</h1>
+        <form id="medicineForm">
+            <div class="input-field">
+                <label for="disease">Select Disease:</label>
+                <select id="disease" name="disease">
+                    <option value="migraine">Migraine</option>
+                    <option value="diarrhea">Diarrhea</option>
+                    <option value="fever">Fever</option>
+                    <option value="GastroesophagealRefluxDisease">GastroesophagealRefluxDisease</option>
+                    <option value="depression">depression</option>
+                    <option value="rheumatoidArthritis">rheumatoidArthritis</option>
+                    <option value="pepticUlcers">pepticUlcers </option>
+                    <option value="depression">depression </option>
+                    <option value="hypertension">hypertension </option>
+                    
+
+                    <option value="gallstones">gallstones</option>
+                    <option value="anxietyDisorder">anxietyDisorder</option>
+
+                    <option value="urinaryTractInfection">urinaryTractInfection</option>
+                    <option value="appendicitis">appendicitis</option>
+                    <option value="gastrointestinalBleeding">gastrointestinalBleeding</option>
+                    <option value="chronicFatigueSyndrome">chronicFatigueSyndrome</option>
+                    <option value="ocularMigraine">ocularMigraine</option>
+                    <!-- Add more options -->
+                </select>
+            </div>
+
+            <div class="input-field">
+                <label for="age">Enter Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <div class="input-field">
+                <label for="prakruti">Select Manas Prakruti:</label>
+                <select id="prakruti" name="prakruti">
+                    <option value="vata">Vata</option>
+                    <option value="pitta">Pitta</option>
+                    <option value="kapha">Kapha</option>
+                    <!-- Add more options -->
+                </select>
+            </div>
+
+            <div class="input-field">
+                <label for="gender">Select Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+                </div>
+            </div>
+
+            <button type="button" onclick="recommendMedicine()">Get Recommendation</button>
+        </form>
+
+        <div id="result" class="hidden">
+            <h2>Recommended Medicine:</h2>
+            <p id="medicineInfo"></p>
+        </div>
+    </div>
+
+    <script src="../assets/js/tt.js"></script>
+</body>
+</html>

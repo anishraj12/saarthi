@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap User Management Data Table</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link href="/assets/css/doctorConsole.css" rel="stylesheet">
+<script>
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+	
+});
+</script>
+</head>
+
+	
+<a href="advisoryForm">	<button type="button" class="btn btn-primary"  >
+ 	 Registerr as advisory
+	</button></a>
+
+<!-- Modal -->
+
+
+	<!-- search option   -->
+	
+<!-- The form -->
+
+<div class="margin-top:10rem">
+<form class="example" action="/doctor/search" method="get">
+  <input type="text" placeholder="Search..." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+</div>
+	<!-- end searrch option   -->
+ 
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <h2>Patient Disease <b>History</b></h2>
+                    </div>
+                    <div class="col-xs-7">
+                        <a href="/doctor/add" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Add New Treatment</span></a>				
+                    </div>
+                </div>
+            </div>
+            
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Patient ID</th>						
+                        <th>Date Created</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Height</th>
+                        <th>Weight</th>
+                        <th>Human Nature</th>
+                        <th>Diease</th>
+                        <th>Medicine Recommend</th>
+                        <th>Doctor ID</th>
+                    </tr>
+                </thead>
+                 
+               
+
+                 
+	             <tbody>
+					   <th:block th:if="${PatientHistoryNotFound}">
+    <p class="text-center text-success fs-4">[[${PatientHistoryNotFound}]]</p>
+</th:block>
+                    <tr th:each="item : ${PatientHistorty}">
+                   
+                        <td th:text="${item.id}"></td>
+                        <td th:text="${item.patientId}"></td>
+                        <td th:text="${item.data_created}"></td>                        
+                        <td th:text="${item.gender}"></td>
+                        <td th:text="${item.age}"></td>
+                        <td th:text="${item.height}"></td>
+                        <td th:text="${item.weight}"></td>
+                        <td th:text="${item.human_nature}"></td>
+                        <td th:text="${item.disease}"></td>
+                        <td th:text="${item.medicine}"></td>
+                        <td th:text="${item.doctorId}"></td>
+                    </tr>
+                   
+                </tbody>
+               
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a href="#">Previous</a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>        
+</div>     
+</body>
+</html>

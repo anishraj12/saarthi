@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>
+		Build a Survey Form using HTML and CSS
+	</title>
+
+<link href="/assets/css/question.css" rel="stylesheet">
+	
+</head>
+
+<body>
+	<h1>Patient Details Form</h1>
+
+	<!-- Create Form -->
+	<form id="form" action="/doctor/add" method="post">
+
+		<!-- Details -->
+		<div class="form-control">
+			<label for="name" id="label-name"  >Patient ID</label>
+			<!-- Input Type Text -->
+			
+				<input type="text"
+				id="patientId" name="patientId" th:field="*{book.patientId}"
+				placeholder="Enter your Patient ID" />
+		</div>
+
+
+		<div class="form-control">
+			<label for="age" id="label-age">Age</label>
+
+			<!-- Input Type Email-->
+			<input type="number"
+				id="age" name="age" th:field="*{book.age}"
+				placeholder="Enter your Ages" />
+		</div>
+
+
+
+		<div class="form-control">
+			<label for="weight" id="label-age">
+				Weight
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="number"
+				id="weight" name="weight" th:field="*{book.weight}"
+				placeholder="Enter your weight" />
+		</div>
+
+
+		<div class="form-control">
+			<label for="height" id="label-age">
+				Height
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="number"
+				id="height"  name="height" th:field="*{book.height}"
+				placeholder="Enter your height" />
+		</div>
+	
+
+		<div class="form-control">
+			<label>
+				Gender
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio"
+					id="recommed-1" th:field="*{book.gender}"
+					name="gender"   value="male">Male</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio"
+					id="recommed-2" th:field="*{book.gender}"
+					name="gender" value="female">Female</input>
+			</label>
+		</div>
+	
+	
+			<div class="form-control">
+			<label>
+				serverity
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio"
+					id="recommed-1" th:field="*{book.severity}"
+					name="severity" value="LOW">LOW</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio"
+					id="recommed-2" th:field="*{book.severity}"
+					name="severity" value="NORMAL">NORMAL</input>
+			</label>
+		</div>
+		
+		<div class="form-control">
+			<label>
+				Que 1: Do you experience any symptoms such as burning or discomfort in your stomach or chest, especially after meals?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio"
+					id="recommed-1" th:field="*{book.acidity}"
+					name="acidity" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio"
+					id="recommed-2" th:field="*{book.acidity}"
+					name="acidity" value="0">No</input>
+			</label>
+		</div>
+		
+		<div class="form-control">
+			<label>
+				Que 2: Do you frequently experience discomfort, bloating, or any other signs of indigestion, particularly after meals?
+
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio"
+					id="recommed-1" th:field="*{book.indigestion}"
+					name="indigestion" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.indigestion}"
+					id="recommed-2"
+					name="indigestion" value="0">No</input>
+			</label>
+		</div>
+		
+		
+		<div class="form-control">
+			<label>
+				Que 3:  Do you frequently experience headaches, and if so, can you describe the nature, intensity, and any patterns you've noticed regarding when they occur?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.headache}"
+					id="recommed-1"
+					name="headache" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.headache}"
+					id="recommed-2"
+					name="headache" value="0">No</input>
+			</label>
+		</div>
+		
+		<div class="form-control">
+			<label>
+				Que 4: Do you ever experience blurred or distorted visio
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.blurred_and_distorted_vision}"
+					id="recommed-1" 
+					name="blurred_and_distorted_vision" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.blurred_and_distorted_vision}"
+					id="recommed-2"
+					name="blurred_and_distorted_vision" value="0">No</input>
+			</label>
+		</div>
+		
+		
+		<div class="form-control">
+			<label>
+				Que 5:Do you often experience excessive hunger, even shortly after meals, or have you noticed any unusual patterns in your appetite? 
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.excessive_hunger}"
+					id="recommed-1"
+					name="excessive_hunger" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.excessive_hunger}"
+					id="recommed-2"
+					name="excessive_hunger" value="0">No</input>
+			</label>
+		</div>
+		
+		
+		
+		<div class="form-control">
+			<label>
+				Que 6: Do you experience muscle weakness, fatigue, or a lack of strength?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.muscle_weakness}"
+					id="recommed-1"
+					name="muscle_weakness" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.muscle_weakness}"
+					id="recommed-2"
+					name="muscle_weakness" value="0">No</input>
+			</label>
+		</div>
+		
+		
+		<div class="form-control">
+			<label>
+				Que 7: Do you frequently experience stiffness or discomfort in your neck?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.stiff_neck}"
+					id="recommed-1"
+					name="stiff_neck" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.stiff_neck}"
+					id="recommed-2"
+					name="stiff_neck" value="0">No</input>
+			</label>
+		</div>
+		
+		
+		
+		<div class="form-control">
+			<label>
+				Que 8: Do you experience swelling in your joints? 
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.swelling_joints}"
+					id="recommed-1"
+					name="swelling_joints" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.swelling_joints}"
+					id="recommed-2"
+					name="swelling_joints" value="0">No</input>
+			</label>
+		</div>
+		
+		
+		
+		<div class="form-control">
+			<label>
+				Que 9:  Do you often experience stiffness or difficulty in movement, especially after periods of inactivity or during specific times of the day?
+			</label> 
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.movement_stiffness}"
+					id="recommed-1"
+					name="movement_stiffness" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.movement_stiffness}"
+					id="recommed-2"
+					name="movement_stiffness" value="0">No</input>
+			</label>
+		</div>
+		
+		
+		<div class="form-control">
+			<label>
+				Que 10: Do you frequently experience feelings of sadness, lack of interest, or a persistent low mood that impacts your daily life?
+
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.depression}"
+					id="recommed-1"
+					name="depression" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.depression}"
+					id="recommed-2"
+					name="depression" value="0">No</input>
+			</label>
+		</div>
+		
+		
+		<div class="form-control">
+			<label>
+				Que 11: irritability
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.irritability}"
+					id="recommed-1"
+					name="irritability" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.irritability}"
+					id="recommed-2"
+					name="irritability" value="0">No</input>
+			</label>
+		</div>
+		
+		
+		<div class="form-control">
+			<label>
+				Que 12: visual_disturbances
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.visual_disturbances}"
+					id="recommed-1"
+					name="visual_disturbances" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.visual_disturbances}"
+					id="recommed-2"
+					name="visual_disturbances" value="0">No</input>
+			</label>
+		</div>
+		
+				<div class="form-control">
+			<label>
+				Que 13: painful_walking
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.painful_walking}"
+					id="recommed-1"
+					name="painful_walking" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio"  th:field="*{book.painful_walking}"
+					id="recommed-2"
+					name="painful_walking" value="0">No</input>
+			</label>
+		</div>
+		
+				<div class="form-control">
+			<label>
+				Que 14: abdominal_pain
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio"  th:field="*{book.abdominal_pain}"
+					id="recommed-1"
+					name="abdominal_pain" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.abdominal_pain}"
+					id="recommed-2"
+					name="abdominal_pain" value="0">No</input>
+			</label>
+		</div>
+		
+				<div class="form-control">
+			<label>
+				Que 15: nausea
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.nausea}"
+					id="recommed-1"
+					name="nausea" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.nausea}"
+					id="recommed-2"
+					name="nausea" value="0">No</input>
+			</label>
+		</div>
+		
+				<div class="form-control">
+			<label>
+				Que 16: vomiting
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.vomiting}"
+					id="recommed-1"
+					name="vomiting" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.vomiting}"
+					id="recommed-2" 
+					name="vomiting" value="0">No</input>
+			</label>
+		</div>
+		
+			<div class="form-control">
+			<label>
+				Que 17: blood_in_mucus
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.blood_in_mucus}"
+					id="recommed-1"
+					name="blood_in_mucus" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.blood_in_mucus}"
+					id="recommed-2" 
+					name="blood_in_mucus" value="0">No</input>
+			</label>
+		</div>
+			<div class="form-control">
+			<label>
+				Que 18: Fatigue
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.fatigue}"
+					id="recommed-1"
+					name="fatigue" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.fatigue}"
+					id="recommed-2"
+					name="fatigue" value="0">No</input>
+			</label>
+		</div>
+			<div class="form-control">
+			<label>
+				Que 19: Dehydration
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.dehydration}"
+					id="recommed-1"
+					name="dehydration" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.dehydration}"
+					id="recommed-2"
+					name="dehydration" value="0">No</input>
+			</label>
+		</div>
+			<div class="form-control">
+			<label>
+				Que 20: loss_of_appetite
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.loss_of_appetite}"
+					id="recommed-1"
+					name="loss_of_appetite" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.loss_of_appetite}"
+					id="recommed-2"
+					name="loss_of_appetite" value="0">No</input>
+			</label>
+		</div>
+			<div class="form-control">
+			<label>
+				Que 21: cramping
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.cramping}"
+					id="recommed-1"
+					name="cramping" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.cramping}"
+					id="recommed-2"
+					name="cramping" value="0">No</input>
+			</label>
+		</div>
+			<div class="form-control">
+			<label>
+				Que 22: blood_in_stool
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.blood_in_stool}"
+					id="recommed-1"
+					name="blood_in_stool" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.blood_in_stool}"
+					id="recommed-2"
+					name="blood_in_stool" value="0">No</input>
+			</label>
+		</div>
+			<div class="form-control">
+			<label>
+				Que 23: gnawing
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.gnawing}"
+					id="recommed-1"
+					name="gnawing" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.gnawing}"
+					id="recommed-2"
+					name="gnawing" value="0">No</input>
+			</label>
+		</div>
+			<div class="form-control">
+			<label>
+				Que 24: upper_abdomain_pain
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.upper_abdomain_pain}"
+					id="recommed-1"
+					name="upper_abdomain_pain" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.upper_abdomain_pain}"
+					id="recommed-2"
+					name="upper_abdomain_pain" value="0">No</input>
+			</label>
+		</div>
+			<div class="form-control">
+			<label>
+				Que 25: fullness_feeling
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.fullness_feeling}"
+					id="recommed-1"
+					name="fullness_feeling" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.fullness_feeling}"
+					id="recommed-2"
+					name="fullness_feeling" value="0">No</input>
+			</label>
+		</div>
+			<div class="form-control">
+			<label>
+				Que 26: hiccups
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.hiccups}"
+					id="recommed-1"
+					name="hiccups" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.hiccups}"
+					id="recommed-2"
+					name="hiccups" value="0">No</input>
+			</label>
+		</div>
+			<div class="form-control">
+			<label>
+				Que 27: abdominal_bloating
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.abdominal_bloating}"
+					id="recommed-1"
+					name="abdominal_bloating" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.abdominal_bloating}"
+					id="recommed-2"
+					name="abdominal_bloating" value="0">No</input>
+			</label>
+		</div>
+		
+			<div class="form-control">
+			<label>
+				Que 28: heartburn
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.heartburn}"
+					id="recommed-1"
+					name="heartburn" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio"  th:field="*{book.heartburn}"
+					id="recommed-2"
+					name="heartburn" value="0">No</input>
+			</label>
+		</div>	<div class="form-control">
+			<label>
+				Que 29: belching
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio"  th:field="*{book.belching}"
+					id="recommed-1"
+					name="belching" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.belching}"
+					id="recommed-2"
+					name="belching" value="0">No</input>
+			</label>
+		</div>	
+		
+		<div class="form-control">
+			<label>
+				Que 30: burning_ache
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.burning_ache}"
+					id="recommed-1"
+					name="burning_ache" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.burning_ache}"
+					id="recommed-2"
+					name="burning_ache" value="0">No</input>
+			</label>
+		</div>	
+		
+		
+				<div class="form-control">
+			<label>
+				Que 31: fever
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio" th:field="*{book.fever}"
+					id="recommed-1"
+					name="fever" value="1">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio" th:field="*{book.fever}"
+					id="recommed-2"
+					name="fever" value="0">No</input>
+			</label>
+		</div>	
+		
+		
+		
+		
+	<!--	<div class="form-control">
+			<label>Languages and Frameworks known 
+				<small>(Check all that apply)</small>
+			</label>
+			 Input Type Checkbox 
+			<label for="inp-1">
+				<input type="checkbox"
+					name="inp">C</input></label>
+			<label for="inp-2">
+				<input type="checkbox"
+					name="inp">C++</input></label>
+			<label for="inp-3">
+				<input type="checkbox"
+					name="inp">C#</input></label>
+			<label for="inp-4">
+				<input type="checkbox"
+					name="inp">Java</input></label>
+			<label for="inp-5">
+				<input type="checkbox"
+					name="inp">Python</input></label>
+			<label for="inp-6">
+				<input type="checkbox"
+					name="inp">JavaScript</input></label>
+			<label for="inp-7">
+				<input type="checkbox"
+					name="inp">React</input></label>
+			<label for="inp-7">
+				<input type="checkbox"
+					name="inp">Angular</input></label>
+			<label for="inp-7">
+				<input type="checkbox"
+					name="inp">Django</input></label>
+			<label for="inp-7">
+				<input type="checkbox"
+					name="inp">Spring</input></label>
+		</div>
+
+		<div class="form-control">
+			<label for="comment">
+				Any comments or suggestions
+			</label>
+
+			 multi-line text input control 
+			<textarea name="comment" id="comment"
+				placeholder="Enter your comment here">
+			</textarea>
+		</div>
+-->
+		<!-- Multi-line Text Input Control -->
+		<button type="submit" value="submit">
+			Submit
+		</button>
+	</form>
+</body>
+</html>

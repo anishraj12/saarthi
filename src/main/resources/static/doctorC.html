@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>My First doctor console</h1>
+<p>My first paragraph.</p>
+<h6>Name: [[${user.username}]]</h6>
+<h6>ID: [[${user.id}]]</h1>
+<h6>Role: [[${user.hasRole}]]</h6>
+
+ <div class="search">
+            <form action="/doctor/search" method="get">
+                <input type="text"
+                       placeholder=" Search Patient by id or username"
+                       name="search">
+                <button>
+                    <i class="fa fa-search"
+                       style="font-size: 18px;">
+                    </i>
+                </button>
+            </form>
+        </div>
+     <!-- Check if user1 is not null and has the username property -->
+	<h6 th:if="${user1 != null and user1.username != null}" th:text="'Patient Name: ' + ${user1.username}  "></h6>
+
+    <h6 th:if="${user1 != null and user1.username != null}" th:text="'Patient role: ' + ${user1.hasRole}"></h6>
+    
+    
+    <br><br><br><br>
+    
+    <a th:href="@{/logout}">Logout</a>
+</body>
+</html> 

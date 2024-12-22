@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Example</title>
+</head>
+<body>
+
+<form action="#" method="post">
+    <label for="symptoms">Select a Symptoms:</label>
+    <select id="symptoms" name="symptoms" th:field="*{symptoms}"  onchange="loadAdditionalDropdownOptions()" >
+        <option th:each="symptom : ${symptoms}" th:value="${symptom}" th:text="${symptom}"></option>
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script th:inline="javascript">
+  
+    function loadAdditionalDropdownOptions() 
+    {
+    var d = document.getElementById("symptoms").value;
+   <!-- // alert(d);-->
+   
+        console.log(' clicked'+d);
+    }
+
+    
+   
+</script>
+
+</body>
+</html>
